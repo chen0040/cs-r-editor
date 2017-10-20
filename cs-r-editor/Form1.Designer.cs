@@ -28,13 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.docScript = new System.Windows.Forms.Panel();
             this.SuspendLayout();
+            // 
+            // docScript
+            // 
+            this.docScript.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.docScript.Location = new System.Drawing.Point(0, 0);
+            this.docScript.Name = "docScript";
+            this.docScript.Size = new System.Drawing.Size(601, 425);
+            this.docScript.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(488, 350);
+            this.ClientSize = new System.Drawing.Size(601, 425);
+            this.Controls.Add(this.docScript);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -42,6 +52,8 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel docScript;
     }
 }
 
