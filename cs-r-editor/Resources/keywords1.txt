@@ -1,0 +1,4 @@
+commandArgs detach length dev.off stop lm library predict lmer 
+            plot print display anova read.table read.csv complete.cases dim attach as.numeric seq max 
+            min data.frame lines curve as.integer levels nlevels ceiling sqrt ranef order
+            AIC summary str head png tryCatch par mfrow interaction.plot qqnorm qqline

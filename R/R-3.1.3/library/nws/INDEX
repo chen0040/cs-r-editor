@@ -1,0 +1,63 @@
+batchNodeList           NodeList Functions
+checkSleigh             Number of Results Pending From Sleigh
+close                   Close a Sleigh or netWorkSpace
+defaultSleighOptions    Default Sleigh Options Environment
+eachElem                Apply a Function in Parallel over a Set of
+                        Lists and Vectors
+eachWorker              Execute a Function in Parallel on all Workers
+                        of a Sleigh
+export                  sleigh Class Method
+germandata              German Credit data
+isClosure               Determine if a Worker Function is a Closure
+lsfcmd                  Sleigh Auxiliary Function
+netWorkSpace            NetWorkSpaces Objects
+netWorkSpaceObject      sleigh Class Method
+nws-package             The NetWorkSpaces Package
+nwsClose                Close a netWorkSpace
+nwsDeclare              Declare a netWorkSpace Variable
+nwsDeleteVar            Delete a Variable from a netWorkSpace
+nwsDeleteWs             Delete a netWorkSpace
+nwsFetch                Fetch a Stored Value
+nwsFetchFile            Fetch a Value and Write It to a File
+nwsFetchTry             Fetch a Value from a NetWorkSpace (Non-Blocking
+                        Version)
+nwsFetchTryFile         Fetch a Stored Value and Write It to a File
+nwsFind                 Find a Stored Value
+nwsFindFile             Find a Stored Value and Write It to a File
+nwsFindTry              Find a Stored Value (Non-Blocking Version)
+nwsFindTryFile          Find a Stored Value and Write It to a File
+nwsIFetch               Iterate Through Values in a netWorkSpace
+                        Variable
+nwsIFetchTry            Iterate Through Values of a netWorkSpace
+                        Variable
+nwsIFind                Iterate Through Stored Values of a netWorkSpace
+                        Variable
+nwsIFindTry             Iterate Through Stored Values of a netWorkSpace
+                        Variable
+nwsListVars             List Variables in a netWorkSpace
+nwsListWss              List All netWorkSpaces
+nwsMktempWs             Create a Temporary netWorkSpace
+nwsOpenWs               Create and Own a netWorkSpace
+nwsPkgInfo              NetWorkSpaces Package Information
+nwsServer               Class Representing NetWorkSpaces Server
+nwsServerObject         Return Server Object Associated with
+                        netWorkSpace
+nwsStore                Associate a Value with a Variable in
+                        netWorkSpace
+nwsStoreFile            Read a Value from File and Store in
+                        netWorkSpace
+nwsUseWs                Connect to a netWorkSpace
+nwsVariable             Create an Active Binding for a netWorkSpace
+                        Variable
+nwsWsName               Return Name of a netWorkSpace
+rankCount               Return a Rank Count from a Sleigh
+rshcmd                  Sleigh Auxiliary Function
+sleigh                  Class "sleigh"
+sleighPending           Class "sleighPending"
+sshcmd                  Sleigh Auxiliary Function
+status                  Check Status of Sleigh Workers
+stopSleigh              Stop a Sleigh
+unexport                sleigh Class Method
+waitSleigh              Wait for Results from Sleigh
+workerCount             Find the Number of Workers in a Sleigh
+workerInfo              sleigh Class Method

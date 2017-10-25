@@ -1,0 +1,52 @@
+CMCSimulation           A function to simulate a continuous time Markov
+                        chain.
+MCEstimation            A function to estimate the transition matrix
+                        for a discrete time Markov chain.
+MCSimulation            A function to simulate a discrete time Markov
+                        chain.
+RK4adapt                A function which uses the Fourth order
+                        Runge-Kutta method with adaptive step size to
+                        solve a system of ODE's.
+bisection               A function of the bisection algorithm.
+booking_clerkMC         A function to simulate the harassed booking
+                        clerk Markov chain.
+fitDistances            Function to fit a model to seed transect
+                        distance/count data.
+fixedpoint              A function of the fixed point algorithm.
+fixedpoint_show         A function of the fixed point algorithm.
+kew                     303 years of monthly rainfall data from Kew
+                        Gardens, London, U.K.
+mean.transectHolder     Function to compute the mean dispersal distance
+                        along a transect of seed traps.
+mean.trapTransect       Function to compute the mean dispersal distance
+                        along a transect of seed traps.
+newtonraphson           A function of the Newton-Raphson algorithm.
+newtonraphson_show      A function of the Newton-Raphson algorithm,
+                        plotting the path.
+prime                   Function to assess whether or not an integer is
+                        prime.
+primesieve              Function to identify all the primes in a vector
+                        of positive integers.
+print.transectHolder    Function to print a transectHolder object
+                        usefullly.
+print.trapTransect      Function to print a trapTransect object
+                        usefullly.
+sd.transectHolder       Function to compute the sd dispersal distance
+                        along a transect of seed traps.
+simulate.transectHolder
+                        Function to simulate a modelled seed rain from
+                        a transectHolder
+spuRs-package           "Introduction to Scientific Programming and
+                        Simulation Using R."
+transectHolder          Function to construct an object representing a
+                        collection of trapTransect objects.
+trapTransect            Function to construct an object representing a
+                        transect of seedtraps.
+treeg                   Grand fir tree growth data from northern and
+                        central Idaho, USA.
+trees                   von Guttenberg Norway spruce tree measurement
+                        data
+ufc                     Upper Flat Creek forest cruise tree data
+ufc.plots               Upper Flat Creek forest cruise plot data
+vol.m3                  Function to compute the volume of a tree bole
+                        assuming a particular shape.

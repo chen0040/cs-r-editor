@@ -1,0 +1,22 @@
+GSE2034
+SPECint2006
+batting.2008
+births2006.smpl: births2006.idx
+consumption
+doctorates
+dow30
+field.goals
+ham.price.ts
+medicare.payments
+medicare.payments.by.state
+mort06.smpl
+outcome.of.care.measures.national
+sanfrancisco.home.sales: sanfranscisco.home.sales.testing.indices sanfrancisco.home.sales.training.indices
+shiller: shiller.index shiller.other.data
+spambase
+team.batting.00to08
+tires.sus
+top.bacon.searching.cities
+toxins.and.cancer
+turkey.price.ts
+yosemite

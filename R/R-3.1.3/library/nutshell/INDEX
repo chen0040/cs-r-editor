@@ -1,0 +1,31 @@
+GSE2034                 Breast cancer relapse free survival
+SPECint2006             SPECint2006 Results
+batting.2008            MLB Batting Data, 2008 Season
+births2006.smpl         Births in the United States, 2006
+consumption             Per capita US Food Consumption 1980-2005
+doctorates              Doctorates Awarded in the United States,
+                        2001-2006
+dow30                   Dow 30 Stock Quotes This data frame contains
+                        stock quotes for all 30 stocks in the Dow Jones
+                        Industrial Average between September 22, 2008
+                        and September 21, 2009.
+field.goals             2005 Field Goal Attempts
+ham.price.ts            Ham Price Time Series
+medicare.payments       Average Medicare Payment Data
+medicare.payments.by.state
+                        Medicare Payments by State
+mort06.smpl             US Mortality Data, 2006
+outcome.of.care.measures.national
+                        National outcome of care measures
+sanfrancisco.home.sales
+                        San Franciscio Home Sales Data
+shiller.index           Shiller Home Price Index
+spambase                Spambase Data Set
+team.batting.00to08     MLB Team Batting Statistics, 2000-2008
+tires.sus               Stepped Up Speed Tire Failure Test Data
+top.bacon.searching.cities
+                        Top Bacon Searching Cities
+toxins.and.cancer       Toxins and Cancer
+turkey.price.ts         Monthly Average Turkey Price, January 2001 to
+                        April 2008
+yosemite                Yosemite Valley Elevation Data
