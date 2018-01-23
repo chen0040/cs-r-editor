@@ -40,6 +40,7 @@
             this.btnBrowse = new System.Windows.Forms.ToolStripButton();
             this.btnRefreshWorkingDirectory = new System.Windows.Forms.ToolStripButton();
             this.btnSaveOutput = new System.Windows.Forms.ToolStripButton();
+            this.btnOpenWorkingDirectory = new System.Windows.Forms.ToolStripButton();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -49,16 +50,16 @@
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.btnRunScript = new System.Windows.Forms.ToolStripButton();
             this.btnReloadScript = new System.Windows.Forms.ToolStripButton();
+            this.btnSaveScript = new System.Windows.Forms.ToolStripButton();
+            this.btnScriptZoomIn = new System.Windows.Forms.ToolStripButton();
+            this.btnScriptZoomOut = new System.Windows.Forms.ToolStripButton();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.toolStrip3 = new System.Windows.Forms.ToolStrip();
             this.btnCreateScript = new System.Windows.Forms.ToolStripButton();
             this.btnDeleteScript = new System.Windows.Forms.ToolStripButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnSaveScript = new System.Windows.Forms.ToolStripButton();
-            this.btnScriptZoomIn = new System.Windows.Forms.ToolStripButton();
-            this.btnScriptZoomOut = new System.Windows.Forms.ToolStripButton();
-            this.btnOpenWorkingDirectory = new System.Windows.Forms.ToolStripButton();
+            this.btnReloadRScripts = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -131,6 +132,7 @@
             this.txtConsole.Location = new System.Drawing.Point(3, 16);
             this.txtConsole.Multiline = true;
             this.txtConsole.Name = "txtConsole";
+            this.txtConsole.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtConsole.Size = new System.Drawing.Size(201, 113);
             this.txtConsole.TabIndex = 5;
             // 
@@ -187,6 +189,15 @@
             this.btnSaveOutput.Size = new System.Drawing.Size(92, 22);
             this.btnSaveOutput.Text = "Save Output";
             this.btnSaveOutput.Click += new System.EventHandler(this.btnSaveOutput_Click);
+            // 
+            // btnOpenWorkingDirectory
+            // 
+            this.btnOpenWorkingDirectory.Image = ((System.Drawing.Image)(resources.GetObject("btnOpenWorkingDirectory.Image")));
+            this.btnOpenWorkingDirectory.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnOpenWorkingDirectory.Name = "btnOpenWorkingDirectory";
+            this.btnOpenWorkingDirectory.Size = new System.Drawing.Size(69, 22);
+            this.btnOpenWorkingDirectory.Text = "Explorer";
+            this.btnOpenWorkingDirectory.Click += new System.EventHandler(this.btnOpenWorkingDirectory_Click);
             // 
             // splitContainer1
             // 
@@ -305,6 +316,33 @@
             this.btnReloadScript.Text = "Reload";
             this.btnReloadScript.Click += new System.EventHandler(this.btnReloadScript_Click);
             // 
+            // btnSaveScript
+            // 
+            this.btnSaveScript.Image = ((System.Drawing.Image)(resources.GetObject("btnSaveScript.Image")));
+            this.btnSaveScript.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSaveScript.Name = "btnSaveScript";
+            this.btnSaveScript.Size = new System.Drawing.Size(51, 22);
+            this.btnSaveScript.Text = "Save";
+            this.btnSaveScript.Click += new System.EventHandler(this.btnSaveScript_Click);
+            // 
+            // btnScriptZoomIn
+            // 
+            this.btnScriptZoomIn.Image = ((System.Drawing.Image)(resources.GetObject("btnScriptZoomIn.Image")));
+            this.btnScriptZoomIn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnScriptZoomIn.Name = "btnScriptZoomIn";
+            this.btnScriptZoomIn.Size = new System.Drawing.Size(72, 22);
+            this.btnScriptZoomIn.Text = "Zoom In";
+            this.btnScriptZoomIn.Click += new System.EventHandler(this.btnScriptZoomIn_Click);
+            // 
+            // btnScriptZoomOut
+            // 
+            this.btnScriptZoomOut.Image = ((System.Drawing.Image)(resources.GetObject("btnScriptZoomOut.Image")));
+            this.btnScriptZoomOut.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnScriptZoomOut.Name = "btnScriptZoomOut";
+            this.btnScriptZoomOut.Size = new System.Drawing.Size(82, 22);
+            this.btnScriptZoomOut.Text = "Zoom Out";
+            this.btnScriptZoomOut.Click += new System.EventHandler(this.btnScriptZoomOut_Click);
+            // 
             // splitContainer3
             // 
             this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -339,7 +377,8 @@
             // 
             this.toolStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnCreateScript,
-            this.btnDeleteScript});
+            this.btnDeleteScript,
+            this.btnReloadRScripts});
             this.toolStrip3.Location = new System.Drawing.Point(3, 16);
             this.toolStrip3.Name = "toolStrip3";
             this.toolStrip3.Size = new System.Drawing.Size(201, 25);
@@ -375,41 +414,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Console";
             // 
-            // btnSaveScript
+            // btnReloadRScripts
             // 
-            this.btnSaveScript.Image = ((System.Drawing.Image)(resources.GetObject("btnSaveScript.Image")));
-            this.btnSaveScript.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSaveScript.Name = "btnSaveScript";
-            this.btnSaveScript.Size = new System.Drawing.Size(51, 22);
-            this.btnSaveScript.Text = "Save";
-            this.btnSaveScript.Click += new System.EventHandler(this.btnSaveScript_Click);
-            // 
-            // btnScriptZoomIn
-            // 
-            this.btnScriptZoomIn.Image = ((System.Drawing.Image)(resources.GetObject("btnScriptZoomIn.Image")));
-            this.btnScriptZoomIn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnScriptZoomIn.Name = "btnScriptZoomIn";
-            this.btnScriptZoomIn.Size = new System.Drawing.Size(72, 22);
-            this.btnScriptZoomIn.Text = "Zoom In";
-            this.btnScriptZoomIn.Click += new System.EventHandler(this.btnScriptZoomIn_Click);
-            // 
-            // btnScriptZoomOut
-            // 
-            this.btnScriptZoomOut.Image = ((System.Drawing.Image)(resources.GetObject("btnScriptZoomOut.Image")));
-            this.btnScriptZoomOut.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnScriptZoomOut.Name = "btnScriptZoomOut";
-            this.btnScriptZoomOut.Size = new System.Drawing.Size(82, 22);
-            this.btnScriptZoomOut.Text = "Zoom Out";
-            this.btnScriptZoomOut.Click += new System.EventHandler(this.btnScriptZoomOut_Click);
-            // 
-            // btnOpenWorkingDirectory
-            // 
-            this.btnOpenWorkingDirectory.Image = ((System.Drawing.Image)(resources.GetObject("btnOpenWorkingDirectory.Image")));
-            this.btnOpenWorkingDirectory.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnOpenWorkingDirectory.Name = "btnOpenWorkingDirectory";
-            this.btnOpenWorkingDirectory.Size = new System.Drawing.Size(69, 22);
-            this.btnOpenWorkingDirectory.Text = "Explorer";
-            this.btnOpenWorkingDirectory.Click += new System.EventHandler(this.btnOpenWorkingDirectory_Click);
+            this.btnReloadRScripts.Image = ((System.Drawing.Image)(resources.GetObject("btnReloadRScripts.Image")));
+            this.btnReloadRScripts.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnReloadRScripts.Name = "btnReloadRScripts";
+            this.btnReloadRScripts.Size = new System.Drawing.Size(63, 22);
+            this.btnReloadRScripts.Text = "Reload";
+            this.btnReloadRScripts.Click += new System.EventHandler(this.btnReloadRScripts_Click);
             // 
             // FrmR
             // 
@@ -489,6 +501,7 @@
         private System.Windows.Forms.ToolStripButton btnScriptZoomIn;
         private System.Windows.Forms.ToolStripButton btnScriptZoomOut;
         private System.Windows.Forms.ToolStripButton btnOpenWorkingDirectory;
+        private System.Windows.Forms.ToolStripButton btnReloadRScripts;
     }
 }
 

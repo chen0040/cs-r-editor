@@ -278,9 +278,22 @@ namespace cs_r_editor
                 File.Delete(outputpath);
             }
 
+            string arg1 = filepath;
+            string arg2 = outputpath;
+
+            FrmArgs frmArgs = new FrmArgs();
+            frmArgs.Arg1 = arg1;
+            frmArgs.Arg2 = arg2;
+
+            if(frmArgs.ShowDialog() == DialogResult.OK)
+            {
+                arg1 = frmArgs.Arg1;
+                arg2 = frmArgs.Arg2;
+            }
+
             txtConsole.Text = "";
             btnRunScript.Enabled = false;
-            RScriptRunner.RunFromCmd(scriptPath, mModel.ScriptEnginePath, string.Format("\"{0}\" \"{1}\" \"{2}\"", filepath, outputpath, mModel.WorkingDirectory),
+            RScriptRunner.RunFromCmd(scriptPath, mModel.ScriptEnginePath, string.Format("\"{0}\" \"{1}\" \"{2}\"", arg1, arg2, mModel.WorkingDirectory),
                 (sender2, e2) =>
                 {
                     int index = (int)e2.UserState;
@@ -451,6 +464,17 @@ namespace cs_r_editor
         {
             txtScript.Text = "";
             RefreshView();
+        }
+
+        private void btnReloadRScripts_Click(object sender, EventArgs e)
+        {
+            mModel.Update();
+            lvScript.Items.Clear();
+            
+            foreach (string value in mModel.Scripts)
+            {
+                this.lvScript.Items.Add(value);
+            }
         }
     }
 }

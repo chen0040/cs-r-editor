@@ -51,6 +51,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AsciiCow.cs" />
+    <Compile Include="FrmArgs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmArgs.Designer.cs">
+      <DependentUpon>FrmArgs.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmR.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,9 @@
     <Compile Include="RModels\RModel.cs" />
     <Compile Include="RModels\RModelFactory.cs" />
     <Compile Include="RModels\RScriptRunner.cs" />
+    <EmbeddedResource Include="FrmArgs.resx">
+      <DependentUpon>FrmArgs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmR.resx">
       <DependentUpon>FrmR.cs</DependentUpon>
     </EmbeddedResource>
