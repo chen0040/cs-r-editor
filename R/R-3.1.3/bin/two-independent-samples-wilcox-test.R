@@ -7,6 +7,8 @@
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ##First read in the arguments listed at the command line
+library(XML) 
+
 args=(commandArgs(trailingOnly = TRUE))
 if(length(args)<1){
 	stop("No enough arguments supplied!")
@@ -20,19 +22,29 @@ data <- data[complete.cases(data),]
 
 # df <- data[c(1)]
 
+top = newXMLNode("wilcox_test")
+
 for(i in names(data)){
 	x <- data[[i]]
 	for(j in names(data)){
 		y <- data[[j]]
 		if(i != j) {
-			print(paste0("data x is ", i))
-			print(paste0("data y is ", j))
+			# print(paste0("data x is ", i))
+			# print(paste0("data y is ", j))
+			case = newXMLNode("case", attrs=c(x=i, y=j), parent=top)
 			tryCatch({
-				print(wilcox.test(x ~ y))
+				# print(wilcox.test(x ~ y))
+				chars <- capture.output(print(wilcox.test(x ~ y)))
+				for(line in chars){
+					newXMLNode("line", attrs=c(content=line), parent=case)
+				}
 			}, error = function(err){
-				print(paste0('error: ', err))
+				#print(paste0('error: ', err))
+				newXMLNode("err", attrs=c(content=err), parent=case)
 			})
 			
 		}
 	}
 }
+
+print(top)

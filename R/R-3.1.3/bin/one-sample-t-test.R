@@ -7,6 +7,10 @@
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ##First read in the arguments listed at the command line
+
+library(XML)    
+
+
 args=(commandArgs(trailingOnly = TRUE))
 if(length(args)<1){
 	stop("No enough arguments supplied!")
@@ -20,8 +24,22 @@ data <- data[complete.cases(data),]
 
 # df <- data[c(1)]
 
+top = newXMLNode("t_test")
+
 for(i in names(data)){
 	x <- data[[i]]
-	print(paste0("data x is ", i))
-	print(t.test(x, mu = mu))
+	# print(paste0("data x is ", i))
+    case = newXMLNode("case", attrs=c(name=i, mu=mu), parent=top)
+    tryCatch({
+        chars <- capture.output(print(t.test(x, mu = mu)))
+        for(line in chars){
+            newXMLNode("line", attrs=c(content=line), parent=case)
+        }
+    }, error = function(err) {
+        newXMLNode("err", attrs=c(content=err), parent=case)
+    })
 }
+
+print(top)
+
+
