@@ -12,6 +12,19 @@ data <- read.table(iFileName, header = TRUE, sep=",")
 data <- data[complete.cases(data),]
 data <- data[c(1:2)]
 
+print('Below is snapshot of the data submitted')
+print(head(data, n = 5))
+
+print('++++++++++++++++++++++++++++++++++++++++++++++')
+
+print('Below is a statistical summary of the data submitted')
+print(summary(data))
+
+
+
+print('++++++++++++++++++++++++++++++++++++++++++++++')
+print('Below is the result from KS test')
+
 
 # df <- data[c(1)]
 
