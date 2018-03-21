@@ -16,9 +16,11 @@ print(head(data, n = 5))
 
 print('++++++++++++++++++++++++++++++++++++++++++++++')
 
-print('Below is a statistical summary of the data submitted')
-print(summary(data))
-
+for(i in names(data)){
+	column1 <- data[[i]]
+	print(paste0('Below is a statistical summary of the column ', i))
+	print(summary(data[[i]]))
+}
 
 
 print('++++++++++++++++++++++++++++++++++++++++++++++')
